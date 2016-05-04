@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Author: Md Dalwar Hossain Arif (dharif23@gmail.com)
+	Web-structure: Phonegap Hello world app
+	HTML code and Design: Md Dalwar Hossain Arif
+	Logo Design: David Guzman
+-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Turn Off</title>
+</head>
+
+<body>
+    <div class="menu">
+		<p class="header">Menu</p>
+		<table class="tbl">
+			<tr>
+				<td><a href="devices.html"><img src="img/plug.png"></a></td>
+				<td><a href="advice.html"><img src="img/advice.png"></a></td>
+			</tr>
+			<tr>
+				<td>Devices</td>
+				<td>Advice Log</td>
+			</tr>
+			<tr>
+				<td><a href="profile.html"><img src="img/profile.png"></a></td>
+				<td><a href="settings.html"><img src="img/settings.png"></a></td>
+			</tr>
+			<tr>
+				<td>Profile</td>
+				<td>Settings</td>
+			</tr>
+		</table>
+    </div>
+	<div class="version">
+	&copy; turnOff V&nbsp;<strike>0.0.1</strike>&nbsp;M V P
+	</div>
+</body>
+
+</html>
+
