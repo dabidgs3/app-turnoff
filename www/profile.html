@@ -29,6 +29,26 @@
 <body>
     <div class="profile">
 		<p class="header">Profile</p>
+            <article id="register-art" data-role="page" data-title="Profile">
+              <div class="ui-content" role="main">
+                  <div class="wrap">
+                      <button id="refreshButton" data-role="button" data-inline="true" data-icon="refresh">Refresh Members</button>
+                      <table data-role="table" id="member-table" data-mode="reflow" class="app-responsive table-stroke">
+                          <thead>
+                              <tr>
+                                  <th data-priority="1">Id</th>
+                                  <th data-priority="persist">Name</th>
+                                  <th data-priority="2">Email</th>
+                                  <th data-priority="3">Phone #</th>
+                              </tr>
+                          </thead>
+                          <tbody id="members">
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+                </div>
+            </article>
     </div>
 	<div class="nav">
 		<p><a href="home.html" class="button">&laquo;&nbsp;Menu</a>
@@ -38,6 +58,14 @@
 	&copy; turnOff V&nbsp;<strike>0.0.1</strike>&nbsp;M V P
 	</div>
 </body>
-
+<script type="text/template" id="member-tmpl">
+        <% _.each(members, function(member) { %>
+        <tr>
+            <th><%=member.id%></td>
+            <td><%=member.name%></td>
+            <td><a href="mailto:<%=member.email%>" class="ui-link"><%=member.email%></a></td>
+            <td><a href="tel:<%=member.phoneNumber%>" class="ui-link">Call</a> or <a href="sms:<%=member.phoneNumber%>" class="ui-link">SMS</a> <%=member.phoneNumber%></td>
+            </tr>
+        <% }); %>
+    </script>
 </html>
-
