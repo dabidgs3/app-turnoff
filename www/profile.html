@@ -24,6 +24,32 @@
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Turn Off</title>
+    <!-- For minification, comment out this file -->
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+    /* Builds the updated table for the member list */
+
+    /* Uses JAX-RS GET to retrieve current member list */
+    function updateMemberTable() {
+
+      $.ajax({
+          url: "http://rs-turnoffweb.rhcloud.com/rest/members/0",
+          cache: false,
+          success: function(data) {
+            //to do mapping
+            
+          },
+          error: function(error) {
+              //console.log("error updating table -" + error.status);
+          },
+          complete: function() {
+              // To do
+          }
+      });
+    }
+
+    </script>
 </head>
 
 <body>
@@ -32,6 +58,7 @@
             <article id="register-art" data-role="page" data-title="Profile">
               <div class="ui-content" role="main">
                   <div class="wrap">
+                    <button id="refreshButton" data-role="button" data-inline="true" data-icon="refresh" onclick="updateMemberTable();">Refresh</button>
                       <table data-role="table" id="member-table" data-mode="reflow" class="app-responsive table-stroke">
                           <thead>
                               <tr>
@@ -56,15 +83,9 @@
 	<div class="version">
 	&copy; turnOff V&nbsp;<strike>0.0.1</strike>&nbsp;M V P
 	</div>
+
 </body>
-<script type="text/template" id="member-tmpl">
-        <% _.each(members, function(member) { %>
-        <tr>
-            <th><%=member.id%></td>
-            <td><%=member.name%></td>
-            <td><a href="mailto:<%=member.email%>" class="ui-link"><%=member.email%></a></td>
-            <td><a href="tel:<%=member.phoneNumber%>" class="ui-link">Call</a> or <a href="sms:<%=member.phoneNumber%>" class="ui-link">SMS</a> <%=member.phoneNumber%></td>
-            </tr>
-        <% }); %>
-    </script>
+
+
+
 </html>
